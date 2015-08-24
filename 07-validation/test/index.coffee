@@ -74,7 +74,7 @@ describe '07-validation', ->
       email: 'foo@bar.com'
       taxRate: 0.1
       favouriteColour: '#ff6' 
-      interests: [1, 2] # <---- Problem
+      interests: ["cycling","programming","jogging","music","footy"] # <---- Problem More than 5 interest
     
   # !!!!!
   # Add more tests for different data that users might try to provide!
