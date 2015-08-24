@@ -8,9 +8,11 @@ exports.encrypt = (string) ->
   for char in string
     index = aplhabet1.indexOf char
     if the index is -1
-      result += char
-    else
       result += alphabet0[index]
+      # result += char
+    else
+      result += char
+      #       result += alphabet0[index]
   
   return result    
   # !!! Place your solition here !!!
