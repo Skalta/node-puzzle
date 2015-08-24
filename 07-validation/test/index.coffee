@@ -58,14 +58,23 @@ describe '07-validation', ->
       favouriteColour: '#ff6'
       interests: ["cycling", "programming"] 
       
-  it 'should retune 'false' for invalid date: taxRate', ->
+  it 'should retune 'false' for invalid data: taxRate', ->
     assert !validate
       id: 1
       name: 'John Doe'
       email: 'foo@bar.com'
       taxRate: 1.1  # problem Boundary area
-      favouriteColour: '#ccccffx' 
+      favouriteColour: '#ff6' 
       interests: ["cycling", "programming"]
+      
+  it 'should return 'false' for invalid data: interests', ->
+    assert !validate
+      id: 1
+      name: 'John Doe'
+      email: 'foo@bar.com'
+      taxRate: 0.1
+      favouriteColour: '#ff6' 
+      interests: [1, 2] # <---- Problem
     
   # !!!!!
   # Add more tests for different data that users might try to provide!
