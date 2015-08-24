@@ -11,5 +11,7 @@ exports.validate = (data) ->
   if !/\w+@\w+/.test data.email then return false
   
   if data.taxRate <= 0 and >= 1 then return false
+  
+  if data.interests.length > 4 then return false
 
   return true
