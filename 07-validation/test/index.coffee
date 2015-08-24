@@ -78,23 +78,7 @@ describe '07-validation', ->
     
   # !!!!!
   # Add more tests for different data that users might try to provide!
-  it 'should retune 'false' for invalid data: id', ->
-    assert !validate
-     id: 0 #<----invalid boundary
-     name: 'John Doe'
-     email: 'foo@bar.com'
-     taxRate: 0.1
-     favouriteColour: '#ff6' 
-     interests: ["cycling", "programming"]  
-     
-  it 'should retune 'false' for invalid data: interests', ->
-    assert !validate
-     id: 1
-     name: 'John Doe'
-     email: 'foo@bar.com'
-     taxRate: 0.1
-     favouriteColour: '#ff6' 
-     interests: [1,2]  #<---- Problem
+
      
   
   # !!!!!
