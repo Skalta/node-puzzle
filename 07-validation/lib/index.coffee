@@ -11,7 +11,9 @@ exports.validate = (data) ->
   if !/^\w+@[a-zA-Z_]+?\.[a-zA-Z]+$/.test data.email then return false
   if data.email.length > 255 then return false
   
-  if data.taxRate <= 0 && data.taxRate >= 1 then return false
+  # if data.taxRate <= 0 && data.taxRate >= 1 then return false
+  if 1<=data.taxRate then return false
+  if 0>data.taxRate then return false
   
   if !/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test data.favouriteColour then return false
   
