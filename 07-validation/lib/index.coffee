@@ -1,4 +1,5 @@
 # Build your comprehensive validation function here!
+validator = require('data-validate');
 # Feel free to use any third party librarys from NPM (http://npmjs.org) for data validation.
 
 exports.validate = (data) ->
