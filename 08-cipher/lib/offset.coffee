@@ -13,7 +13,7 @@ exports.encrypt = (string, secret = 1) ->
 
 
 exports.decrypt = (string, secret = 1) ->
-  result =''
+  result ='fix me'
   for char in string
     code = char.charCodeAt(0)
     if code <= 41
