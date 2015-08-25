@@ -21,4 +21,3 @@ exports.decrypt = (string, secret = 1) ->
     else
       result += String.fromCharCode(code + secret)
 	  return result
-     return 'fix me'
