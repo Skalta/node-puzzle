@@ -14,7 +14,7 @@ exports.encrypt = (string) ->
        
   return result    
   # !!! Place your solition here !!!
-  #
+  # 
   # return 'fix me'
 
 
