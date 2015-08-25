@@ -4,27 +4,42 @@ validator = require('data-validate');
 
 exports.validate = (data) ->
 
+if data.id < 0 then return false 
+  
+  if !validator.regex(/[a-z][A-Z][\S]/i) data.name then return false 
+
+  if !validator.isEmail() data.email then return false
+  
+  if !validator.isFloat().min(0).max(1) data.taxRate then return false
+  
+  if !validator.isHexColor() data.favouriteColour then return false
+  
+  if !validator.isIn(["cycling"],data.interests) && !validator.isIn(["programming"],data.interests) then return false
+   
+   console.log("validate value " + exports.validate);
+  
+  return true
   # Very naive checks - change them!
-  if data.id < 0 then return false
+   #if data.id < 0 then return false
 
-  if !/^[a-zA-Z\s]{1,63}$/.test data.name then return false
+   # if !/^[a-zA-Z\s]{1,63}$/.test data.name then return false
 
-  if !/^\w+@[a-zA-Z_]+?\.[a-zA-Z]+$/.test data.email then return false
-  if data.email.length > 255 then return false
+  # if !/^\w+@[a-zA-Z_]+?\.[a-zA-Z]+$/.test data.email then return false
+ # if data.email.length > 255 then return false
   
   # if data.taxRate <= 0 && data.taxRate >= 1 then return false
-  if 1<=data.taxRate then return false
-  if 0>data.taxRate then return false
+ # if 1<=data.taxRate then return false
+ # if 0>=data.taxRate then return false
   
-  if !/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test data.favouriteColour then return false
+ # if !/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test data.favouriteColour then return false
   
-  if (data.interests)
-  	 if (data.interests.length>4)
-  	 	 return false
-	 else 
-	 	for i in [0...data.interests.length-1]
-  			if (data.interests[i].length>31)
-  				 return false
+ # if (data.interests)
+  #	 if (data.interests.length>4)
+  #	 	 return false
+#	 else 
+#	 	for i in [0...data.interests.length-1]
+ # 			if (data.interests[i].length>31)
+  #				 return false
 
 
-  return true
+ # return true
