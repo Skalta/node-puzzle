@@ -8,7 +8,8 @@ exports.validate = (data) ->
 
   if !/^[a-zA-Z\s]{1,63}$/.test data.name then return false
 
-  if !/\w+@\w+/.test data.email then return false
+  if !/^\w+@[a-zA-Z_]+?\.[a-zA-Z]+$/.test data.email then return false
+  if data.email.length > 255 then return false
   
   if data.taxRate <= 0 && data.taxRate >= 1 then return false
   
