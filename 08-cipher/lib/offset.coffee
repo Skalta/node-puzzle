@@ -15,7 +15,7 @@ exports.encrypt = (string, secret = 1) ->
 exports.decrypt = (string, secret = 1) ->
   result =''
   for char in string
-    code = char.charCodeAt(1)
+    code = char.charCodeAt(0)
     if code <= 41
       result += char
     else
