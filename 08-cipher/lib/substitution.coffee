@@ -7,7 +7,7 @@ exports.encrypt = (string) ->
   result = ''
   for char in string
     index = aplhabet1.indexOf char
-    if the index is -1
+    if index is -1
        result += char
     else
        result += alphabet0[index]
